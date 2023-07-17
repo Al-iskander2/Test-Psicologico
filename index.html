@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Qué ves en la imagen?</title>
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+<body onload="cambiarImagen()"> <!-- Llamada a cambiarImagen() al cargar la página -->
+    <h1 id="titulo">Qué ves en la imagen?</h1>
+    <div class="image-container">
+        <img id="resultado-img" src="" alt="Resultado" class="fixed-size-image">
+    </div>
+    <pre></pre>
+    <div>
+        <button id="animales-btn" class="btn btn-primary guardar-btn" type="button" name="animales" onclick="incrementarVariable(1)">Animales</button>
+        <button id="seres-humanos-btn" class="btn btn-primary guardar-btn" type="button" name="seres-humanos" onclick="incrementarVariable(2)">Seres humanos</button>
+        <button id="plantas-btn" class="btn btn-primary guardar-btn" type="button" name="plantas" onclick="incrementarVariable(3)">Huesos humanos</button>
+        <button id="organos-cuerpo-btn" class="btn btn-primary guardar-btn" type="button" name="organos-cuerpo" onclick="incrementarVariable(4)">Órganos del cuerpo</button>
+    </div>
+    <pre></pre>
+    <div class="buttons-container">
+        <button id="siguiente-btn" class="btn btn-primary" type="button" onclick="cambiarImagen()">Siguiente</button>
+        <a id="volver-btn" class="btn btn-primary" onclick="reiniciarTest()">Volver a hacer</a>
+    </div>
+
+    <script>
+        var variable1 = 0;
+        var variable2 = 0;
+        var variable3 = 0;
+        var variable4 = 0;
+
+        var resultado = '';
+
+        var imagenActual = 0; 
+        var totalImagenes = 10;
+
+        function incrementarVariable(variable) {
+            switch (variable) {
+                case 1:
+                    variable1++;
+                    break;
+                case 2:
+                    variable2++;
+                    break;
+                case 3:
+                    variable3++;
+                    break;
+                case 4:
+                    variable4++;
+                    break;
+            }
+        }
+
+        function cambiarImagen() {
+            imagenActual++;
+            if (imagenActual > totalImagenes) {
+                if (variable1 > variable2 && variable1 > variable3 && variable1 > variable4) {
+                    resultado = 'r1';
+                } else if (variable2 > variable1 && variable2 > variable3 && variable2 > variable4) {
+                    resultado = 'r2';
+                } else if (variable3 > variable1 && variable3 > variable2 && variable3 > variable4) {
+                    resultado = 'r3';
+                } else if (variable4 > variable1 && variable4 > variable2 && variable4 > variable3) {
+                    resultado = 'r4';
+                } else {
+                    resultado = 'ningún resultado determinado';
+                }
+
+                mostrarResultado();
+                return;  // Detener la ejecución del código restante en esta función
+            }
+
+            var imgElement = document.getElementById("resultado-img");
+            imgElement.src = "imagen" + imagenActual + ".jpg";
+            mostrarTitulo();
+            mostrarOpciones();
+            mostrarSiguiente();
+            ocultarVolver();
+        }
+
+        function mostrarResultado() {
+            var imgElement = document.getElementById("resultado-img");
+            imgElement.src = resultado + ".png";
+            ocultarTitulo();
+            ocultarOpciones();
+            ocultarSiguiente();
+            mostrarVolver();
+        }
+
+        function ocultarTitulo() {
+            var tituloElement = document.getElementById("titulo");
+            tituloElement.style.display = "none";
+        }
+
+        function mostrarTitulo() {
+            var tituloElement = document.getElementById("titulo");
+            tituloElement.style.display = "block";
+        }
+
+        function ocultarOpciones() {
+            var animalesBtn = document.getElementById("animales-btn");
+            var seresHumanosBtn = document.getElementById("seres-humanos-btn");
+            var plantasBtn = document.getElementById("plantas-btn");
+            var organosCuerpoBtn = document.getElementById("organos-cuerpo-btn");
+
+            animalesBtn.style.display = "none";
+            seresHumanosBtn.style.display = "none";
+            plantasBtn.style.display = "none";
+            organosCuerpoBtn.style.display = "none";
+        }
+
+        function mostrarOpciones() {
+            var animalesBtn = document.getElementById("animales-btn");
+            var seresHumanosBtn = document.getElementById("seres-humanos-btn");
+            var plantasBtn = document.getElementById("plantas-btn");
+            var organosCuerpoBtn = document.getElementById("organos-cuerpo-btn");
+
+            animalesBtn.style.display = "inline-block";
+            seresHumanosBtn.style.display = "inline-block";
+            plantasBtn.style.display = "inline-block";
+            organosCuerpoBtn.style.display = "inline-block";
+        }
+
+        function ocultarSiguiente() {
+            var siguienteBtn = document.getElementById("siguiente-btn");
+            siguienteBtn.style.display = "none";
+        }
+
+        function mostrarSiguiente() {
+            var siguienteBtn = document.getElementById("siguiente-btn");
+            siguienteBtn.style.display = "inline-block";
+        }
+
+        function ocultarVolver() {
+            var volverBtn = document.getElementById("volver-btn");
+            volverBtn.style.display = "none";
+        }
+
+        function mostrarVolver() {
+            var volverBtn = document.getElementById("volver-btn");
+            volverBtn.style.display = "inline-block";
+        }
+
+        function reiniciarTest() {
+            variable1 = 0;
+            variable2 = 0;
+            variable3 = 0;
+            variable4 = 0;
+            resultado = '';
+            imagenActual = 0;
+
+            var imgElement = document.getElementById("resultado-img");
+            imgElement.src = "";
+
+            mostrarTitulo();
+            mostrarOpciones();
+            ocultarSiguiente();
+            ocultarVolver();
+            cambiarImagen();
+        }
+    </script>
+</body>
+</html>
