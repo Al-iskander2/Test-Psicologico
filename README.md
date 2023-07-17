@@ -5,7 +5,8 @@ a cada imagen
 
 <img src="miniatura.png" width="400"/>
 
-Try it: https://al-iskander2.github.io/Seguridad-interior-Jane/ 
+Try it: https://al-iskander2.github.io/Test-Psicologico/
+
 
 #### Video Demo:  <https://youtu.be/PjCA7G7hTuA>
 
