@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    {% if resultado == 'resultado1' %}
+        <h3>Resultado 1:</h3>
+        <p>Eres una persona muy equilibrada,</p>
+        <p>puedes resolver fácilmente muchos problemas.</p>
+        <p>Mantienes un equilibrio con los miembros de tu trabajo y tu familia.</p>
+        <p>Hay miedos que debes enfrentar pero estás dispuesto a enfrentarlos.</p>
+        <p>Eres una persona exitosa y querida por tu entorno.</p>
+    {% elif resultado == 'resultado2' %}
+        <h3>Resultado 2:</h3>
+        <p>Eres una persona cercana al equilibrio,</p>
+        <p>puedes resolver fácilmente algunos problemas.</p>
+        <p>Mantienes buenas relaciones con los miembros de tu trabajo y tu familia.</p>
+        <p>Hay miedos que debes enfrentar pero no pones mucho esfuerzo en enfrentarlos.</p>
+        <p>Eres una persona con logros y valorada por tu entorno.</p>
+    {% elif resultado == 'resultado3' %}
+        <h3>Resultado 3:</h3>
+        <p>Eres una persona con poco equilibrio,</p>
+        <p>puedes resolver fácilmente algunos problemas.</p>
+        <p>Las relaciones con tu trabajo y familia no son muy buenas.</p>
+        <p>Hay miedos que debes enfrentar pero no tratas de enfrentarlos.</p>
+        <p>Eres una persona que debe buscar los logros y el cariño de los demás.</p>
+    {% elif resultado == 'resultado4' %}
+        <h3>Resultado 4:</h3>
+        <p>Eres una persona sin equilibrio, te cuesta resolver los problemas.</p>
+        <p>Las relaciones con tu trabajo y familia no son buenas.</p>
+        <p>Hay miedos que debes enfrentar pero no los enfrentas.</p>
+        <p>Eres una persona que debe buscar logros y el cariño de los demás.</p>
+    {% else %}
+        <h3>Resultado desconocido:</h3>
+        <p>No se encontró un resultado válido.</p>
+    {% endif %}
+    <br>
+    <a class="btn btn-primary mt-3" href="/">Volver a hacer</a>
+</body>
+</html>
