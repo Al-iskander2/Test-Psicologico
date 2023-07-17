@@ -3,9 +3,9 @@
 En este test de psicología voy a mostrarte 10 imagenes y presionarás el botón que corresponde 
 a cada imagen
 
+<img src="miniatura.png" width="400"/>
 
 Try it: https://al-iskander2.github.io/Seguridad-interior-Jane/ 
-
 
 #### Video Demo:  <https://youtu.be/PjCA7G7hTuA>
 
