@@ -8,7 +8,7 @@ a cada imagen
 Try it: https://al-iskander2.github.io/Test-Psicologico/
 
 
-#### Video Demo:  <https://youtu.be/PjCA7G7hTuA>
+Video Demo:  <https://youtu.be/PjCA7G7hTuA>
 
 Tecnologías:
 - HTML
